@@ -23,8 +23,8 @@ nav.primary-nav {
     }
 
     .nav-after {
-
-        svg {
+        &::after {
+            content: url('/assets/svg/nav-after.svg');
             filter: drop-shadow(-2px 5px 24px $dropShaddow);
         }
     }

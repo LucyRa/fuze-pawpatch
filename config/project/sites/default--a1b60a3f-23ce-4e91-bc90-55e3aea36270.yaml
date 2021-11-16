@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-GB
+name: 'The Paw Patch'
+primary: true
+siteGroup: e8ba7ef3-c969-4013-9ccb-770b8a56be17 # The Paw Patch
+sortOrder: 1

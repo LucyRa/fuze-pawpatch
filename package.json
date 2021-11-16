@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "sass": "sass scss:web/css --style=compressed --no-source-map"
+  },
+  "dependencies": {
+    "sass": "^1.43.4"
+  }
+}

@@ -1,0 +1,22 @@
+dateModified: 1637084345
+email:
+  fromEmail: lucyramplin@gmail.com
+  fromName: 'The Paw Patch'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    013c6825-1b7e-4ed8-bd3d-5533f8eb67dd: Common # Common
+    a1b60a3f-23ce-4e91-bc90-55e3aea36270: 'The Paw Patch' # The Paw Patch
+    e8ba7ef3-c969-4013-9ccb-770b8a56be17: 'The Paw Patch' # The Paw Patch
+system:
+  edition: solo
+  live: true
+  name: 'The Paw Patch'
+  schemaVersion: 3.7.8
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

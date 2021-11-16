@@ -1,0 +1,7 @@
+# '/node_modules' has been commented out, to simulate a site that has been built and then deployed
+
+/.env
+/.idea
+/vendor
+# /node_modules 
+.DS_Store

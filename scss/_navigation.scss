@@ -1,0 +1,31 @@
+@use './_colours' as *;
+@use './_typography';
+@use './mixins/_buttons';
+
+/* Primary navigation */
+nav.primary-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    .nav-content, .nav-after {
+        width: 100%;
+        position: relative;
+    }
+
+    .nav-content {
+        margin: 0 auto;
+        min-height: 110px;
+        z-index: 3;
+        background-color: $white;
+        padding: 0 3%;
+    }
+
+    .nav-after {
+
+        svg {
+            filter: drop-shadow(-2px 5px 24px $dropShaddow);
+        }
+    }
+}

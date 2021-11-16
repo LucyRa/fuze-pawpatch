@@ -12,12 +12,15 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Montserrat:ital,wght@0,400;0,600;0,900;1,400&display=swap" rel="stylesheet">
+
+        {# Stylesheet #}
+        <link rel="stylesheet" href="/css/main.css">
     {% endblock %}
 </head>
 <body {{ attr(pageAttrs.body ?? {}) }}>
     {# Primary page navigation #}
     {% include './includes/_nav' with {
-        activeItem: {{ activeItem }}
+        activeItem: { activeItem }
     } %}
     
     {# Introductory header #}

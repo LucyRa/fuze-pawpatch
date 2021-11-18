@@ -1,6 +1,6 @@
 @use './_colours' as *;
 @use './_typography';
-@use './mixins/_buttons';
+@use './mixins/_mixins' as *;
 
 /* Primary navigation */
 nav.primary-nav {
@@ -8,24 +8,110 @@ nav.primary-nav {
     top: 0;
     left: 0;
     z-index: 2;
+}
 
-    .nav-content, .nav-after {
+.nav-content, .nav-after {
+    width: 100%;
+    position: relative;
+}
+
+.nav-content {
+    /* WRAP REVERSE ON MOBILE */
+    margin: 0 auto;
+    min-height: 110px;
+    z-index: 3;
+    background-color: $white;
+    padding: 0 3%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 18px;
+
+    /* DISPLAY ON MOBILE */
+    .nav-burger, .nav-logo-mobile {
+        display: none;
+    }
+
+    /* HIDE ON MOBILE */
+    .nav-logo {
         width: 100%;
-        position: relative;
-    }
+        max-width: 184px;
+        flex-shrink: 1;
 
-    .nav-content {
-        margin: 0 auto;
-        min-height: 110px;
-        z-index: 3;
-        background-color: $white;
-        padding: 0 3%;
-    }
+        a {
+            display: block;
+        }
 
-    .nav-after {
-        &::after {
-            content: url('/assets/svg/nav-after.svg');
-            filter: drop-shadow(-2px 5px 24px $dropShaddow);
+        a, a > img {
+            width: 100%;
         }
     }
+
+    /* ADJUST TO APPEAR AS DROP DOWN NAV ON MOBILE - include nav-actions!!! see design again to remind yourself!!! */
+    .nav-actions {
+        width: 100%;
+        max-width: calc(100% - 3rem - 115.1px);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    .nav-items {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 3rem;
+        padding-left: 0px;
+
+        .nav-items-item {
+            display: block;
+            position: relative;
+            text-align: center;
+            
+            a {
+                text-decoration: none;
+            }
+
+            &.active > a,
+            &:hover > a,
+            &:focus > a,
+            &:active > a {
+                color: $darkOrg;
+            }
+        }
+
+        .nav-item-dropdown {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 4;
+            background-color: $navy;
+            height: fit-content;
+            width: fit-content;
+            padding: 3rem;
+        }
+
+        .nav-items-mobile-ctas, .nav-items-mobile-header {
+            display: none;
+            overflow: hidden;
+        }
+    }
+
+    .nav-ctas {
+        display: inline-flex;
+        gap: 0.75rem;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            display: block;
+        }
+    }
+
+}
+
+.nav-after {
+    @include element-after('/assets/svg/nav-after.svg', -1.5rem, $shaddow:true);
 }

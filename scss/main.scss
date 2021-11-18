@@ -1,8 +1,9 @@
+@use './mixins/_mixins' as *;
 @use './_colours' as *;
 @use './_typography';
-@use './mixins/_buttons';
 @use './_navigation';
 @use './_footer';
+@use './_media-queries';
 
 *,
 *::before,
@@ -21,4 +22,12 @@ body, nav, main, footer {
 
 body, nav, main {
     background-color: $white;
+}
+
+button.btn {
+  @include btn ($navy, $darkOrg, $white, $white);
+}
+
+button.btn-icon {
+  @include btn (transparent, transparent, $white, $white);
 }

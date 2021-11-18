@@ -1,1 +1,32 @@
 @use './_colours' as *;
+
+h1, h2, h3, h4, h5, h6, p, a, span, label, legend, select, input, button, option {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    color: $navy;
+    font-weight: 400;
+}
+
+%bold {
+    font-weight: 700;
+}
+
+%black {
+    font-weight: 900;
+}
+
+%italic {
+    font-style: italic
+}
+
+p, a,
+span,
+input,
+select,
+button {
+    font-size: 14pt 
+}
+
+button.btn, 
+.nav-link {
+    @extend %bold;
+}

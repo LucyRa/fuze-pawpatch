@@ -2,6 +2,8 @@
 @use './_colours' as *;
 @use './_typography';
 @use './_navigation';
+@use './_video-header';
+@use './_cookies-bar';
 @use './_footer';
 @use './_media-queries';
 
@@ -12,7 +14,7 @@
 }
 
 /* General structural styling */
-body, nav, main, footer {
+body, nav, header, main, footer {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -20,14 +22,18 @@ body, nav, main, footer {
     z-index: 0;
 }
 
-body, nav, main {
+body, header, main {
     background-color: $white;
 }
 
 button.btn {
-  @include btn ($navy, $darkOrg, $white, $white);
+  @include btn ($navy, $darkOrg, $white, $white, $navy, $darkOrg);
+
+  &--outline {
+    @include btn (transparent, $white, $navy, $navy, $navy, $white);
+  }
 }
 
 button.btn-icon {
-  @include btn (transparent, transparent, $white, $white);
+  @include btn (transparent, transparent, $white, $white, transparent, transparent);
 }

@@ -27,16 +27,20 @@
     
     {# Introductory header #}
     <header {{ attr(pageAttrs.header ?? {}) }}>
-    
+        {% block headerContent %}
+        {% endblock %}
     </header>
 
     {# Main page content #}
     <main>
-        {% block content %}
+        {% block bodyContent %}
         {% endblock %}
     </main>
 
     {# Footer #}
     {% include './includes/_footer' %}
+
+    {# Position bar for cookie preferences #}
+    {% include './includes/_cookie-bar' %}
 </body>
 </html>

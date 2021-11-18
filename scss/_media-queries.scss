@@ -105,4 +105,38 @@
             }
         }
     }
+
+    /* Video header (home page) */
+    header.home-welcome {
+        .scroll-to-content {
+            
+        }
+    }
+
+    /* Cookies preferences, positioned bar */
+    .cookies-bar-before {
+        &::after {
+            bottom: 10px;
+        }
+    }
+
+    .cookies-bar-content {
+        justify-content: center;
+        padding-top: 1.5rem;
+        padding-bottom: 0.75rem;
+
+        .content-text {
+            min-width: none;
+
+            h6.large-body,
+            p.label-text {
+                text-align: center;
+            }
+        }
+
+        .content-ctas {
+            flex-wrap: wrap;
+            min-width: unset;
+        }
+    }
 }

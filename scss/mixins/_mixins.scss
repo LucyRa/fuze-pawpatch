@@ -40,22 +40,24 @@
     border-radius: 4px;
     transition: all 0.5s ease-in-out;
     outline: 0;
-    border: none;
+    border: 2px solid transparent;
 
     &:hover {
         cursor: pointer;
     }
 }
 
-@mixin btn ($bg, $bgHover, $txt, $txtHover) {
+@mixin btn ($bg, $bgHover, $txt, $txtHover, $border, $borderHover) {
     @extend %button-default;
     background-color: $bg;
     color: $txt;
+    border: 2px solid $border;
 
     &:hover,
     &:focus,
     &:active {
         background-color: $bgHover;
-        color: $txtHover
+        color: $txtHover;
+        border: 2px solid $borderHover;
     }
 }

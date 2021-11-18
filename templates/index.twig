@@ -12,7 +12,19 @@
     }
 } %}
 
+{# Header content #}
+{% block headerContent %}
+<button class="btn-icon coming-soon">
+    <img src="{{ alias('@web') }}/assets/svg/Play.svg" title="Play video" alt="Play video" aria-label="Click to play the video" />
+</button>
+
+<button class="btn-icon scroll-to-content">
+    <img src="{{ alias('@web') }}/assets/svg/more-arrow.svg" title="See more content" alt="See more content" aria-label="Click to scroll to more content" />
+</button>
+{% endblock %}
+
 {# Main page content #}
-{% block content %}
+{% block bodyContent %}
 
 {% endblock %}
+

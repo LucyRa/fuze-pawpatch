@@ -4,6 +4,8 @@ h1, h2, h3, h4, h5, h6, p, a, span, label, legend, select, input, button, option
     font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
     color: $navy;
     font-weight: 400;
+    padding: 0;
+    margin: 0;
 }
 
 %bold {
@@ -26,7 +28,18 @@ button {
     font-size: 14pt 
 }
 
-button.btn, 
+.label-text {
+    font-size: 10pt;
+    line-height: 14pt;
+}
+
+.large-body {
+    font-size: 14pt;
+    @extend %bold;
+}
+
+button.btn,
+button.btn--outline, 
 .nav-link {
     @extend %bold;
 }

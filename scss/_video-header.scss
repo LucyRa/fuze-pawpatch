@@ -1,0 +1,33 @@
+@use './_colours' as *;
+@use './_typography';
+@use './mixins/_mixins' as *;
+
+header.home-welcome {
+    height: 100vh;
+    background-image: url('/assets/jack-russell.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: inherit;
+
+    .scroll-to-content {
+        position: absolute;
+        bottom: 5rem;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        transform-origin: bottom;
+        animation-name: scroll-bounce;
+        animation-timing-function: ease;
+    }
+
+    @keyframes scroll-bounce {
+        0%   { transform: scale(1,1)    translateY(0); }
+        10%  { transform: scale(1.1,.9) translateY(0); }
+        30%  { transform: scale(.9,1.1) translateY(-50px); }
+        50%  { transform: scale(1,1)    translateY(0); }
+        57%  { transform: scale(1,1)    translateY(-7px); }
+        64%  { transform: scale(1,1)    translateY(0); }
+        100% { transform: scale(1,1)    translateY(0); }
+    }
+}

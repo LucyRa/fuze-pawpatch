@@ -2,10 +2,10 @@
 
 {% macro navCtas() %}
 <a href="https://www.facebook.com/THEPAWPATCHDOGFIELDS" target="_blank" aria-label="Navigate to facebook" title="Facebook" class="nav-ctas-social">
-    <img src="{{ alias('@web')}}/assets/Facebook.svg" alt="Facebook icon" title="Facebook icon" />
+    <img src="{{ alias('@web')}}/assets/svg/Facebook.svg" alt="Facebook icon" title="Facebook icon" />
 </a>
 <a href="https://www.instagram.com/thepaw_patch/?hl=en" target="_blank" aria-label="Navigate to instagram" title="Instagram" class="nav-ctas-social">
-    <img src="{{ alias('@web')}}/assets/Instagram.svg" alt="Instagram icon" title="Instagram icon" />
+    <img src="{{ alias('@web')}}/assets/svg/Instagram.svg" alt="Instagram icon" title="Instagram icon" />
 </a>
 <button class="btn coming-soon">
     Let's go walkies!
@@ -17,15 +17,15 @@
     <div class="nav-content">
         <div class="nav-logo">
             <a href="/" aria-label="Navigate to another page" title="Home page">
-                <img src="{{ alias('@web')}}/assets/the-paw-patch-logo.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-logo-desktop" />
-                <img src="{{ alias('@web')}}/assets/paw.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-logo-mobile" />
+                <img src="{{ alias('@web')}}/assets/svg/the-paw-patch-logo.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-logo-desktop" />
+                <img src="{{ alias('@web')}}/assets/svg/paw.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-logo-mobile" />
             </a>
         </div>
         <ul class="nav-items">
             <div class="nav-items-mobile-header">
-                <img src="{{ alias('@web')}}/assets/paw.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-items-mobile-logo">
+                <img src="{{ alias('@web')}}/assets/svg/paw.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-items-mobile-logo">
                 <button class="btn-icon nav-control">
-                    <img src="{{ alias('@web')}}/assets/close.svg" title="Close mobile menu" alt="Close mobile menu" class="nav-items-mobile-logo">
+                    <img src="{{ alias('@web')}}/assets/svg/close.svg" title="Close mobile menu" alt="Close mobile menu" class="nav-items-mobile-logo">
                 </button>
             </div>
             <li class="nav-items-item {% if craft.request.firstSegment == '' %}active{% endif %}">
@@ -70,7 +70,7 @@
         </div>
         <div class="nav-burger">
             <button class="btn-icon nav-control">
-                <img src="{{ alias('@web') }}/assets/menu.svg" title="Mobile navigation menu icon" aria-label="Show mobile navigation" alt="Mobile navigation icon" />
+                <img src="{{ alias('@web') }}/assets/svg/menu.svg" title="Mobile navigation menu icon" aria-label="Show mobile navigation" alt="Mobile navigation icon" />
             </button>
         </div>
     </div>

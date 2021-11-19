@@ -12,26 +12,32 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Annie+Use+Your+Telescope&family=Montserrat:ital,wght@0,400;0,600;0,900;1,400&display=swap" rel="stylesheet">
+
+        {# Stylesheet #}
+        <link rel="stylesheet" href="{{ alias('@web')}}/css/main.css">
+
+        {# JS #}
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ alias('@web') }}/js/main.js"></script>
     {% endblock %}
 </head>
 <body {{ attr(pageAttrs.body ?? {}) }}>
     {# Primary page navigation #}
-    {% include './includes/_nav' with {
-        activeItem: {{ activeItem }}
-    } %}
+    {% include './includes/_nav' %}
     
     {# Introductory header #}
     <header {{ attr(pageAttrs.header ?? {}) }}>
-    
+        {% block headerContent %}
+        {% endblock %}
     </header>
 
     {# Main page content #}
-    <main>
-        {% block content %}
+    <main id="homeContent">
+        {% block bodyContent %}
         {% endblock %}
     </main>
 
-    {# Footer #}
-    {% include './includes/_footer' %}
+    {# Position bar for cookie preferences #}
+    {% include './includes/_cookie-bar' %}
 </body>
 </html>

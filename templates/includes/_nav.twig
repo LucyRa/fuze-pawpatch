@@ -1,4 +1,79 @@
 {# Primary navigation element #}
+
+{% macro navCtas() %}
+<a href="https://www.facebook.com/THEPAWPATCHDOGFIELDS" target="_blank" aria-label="Navigate to facebook" title="Facebook" class="nav-ctas-social">
+    <img src="{{ alias('@web')}}/assets/svg/Facebook.svg" alt="Facebook icon" title="Facebook icon" />
+</a>
+<a href="https://www.instagram.com/thepaw_patch/?hl=en" target="_blank" aria-label="Navigate to instagram" title="Instagram" class="nav-ctas-social">
+    <img src="{{ alias('@web')}}/assets/svg/Instagram.svg" alt="Instagram icon" title="Instagram icon" />
+</a>
+<button class="btn coming-soon">
+    Let's go walkies!
+</button>
+{% endmacro %}
+
+{# Note: Normal href used inplace of twid @url() due to lack of other pages #}
 <nav class="primary-nav">
-    
+    <div class="nav-content">
+        <div class="nav-logo">
+            <a href="/" aria-label="Navigate to another page" title="Home page">
+                <img src="{{ alias('@web')}}/assets/svg/the-paw-patch-logo.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-logo-desktop" />
+                <img src="{{ alias('@web')}}/assets/svg/paw.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-logo-mobile" />
+            </a>
+        </div>
+        <ul class="nav-items">
+            <div class="nav-items-mobile-header">
+                <img src="{{ alias('@web')}}/assets/svg/paw.svg" title="The Paw Patch" alt="The Paw Patch" class="nav-items-mobile-logo">
+                <button class="btn-icon nav-control">
+                    <img src="{{ alias('@web')}}/assets/svg/close.svg" title="Close mobile menu" alt="Close mobile menu" class="nav-items-mobile-logo">
+                </button>
+            </div>
+            <li class="nav-items-item {% if craft.request.firstSegment == '' %}active{% endif %}">
+                <a href="/" class="nav-link" aria-label="navigate to another page" title="Home page">
+                    Home
+                </a>
+            </li>
+            <li class="nav-items-item {% if craft.request.lastSegment == 'about' %}active{% endif %}">
+                <a href="/" class="nav-link" aria-label="navigate to another page" title="About page">
+                    About
+                </a>
+                {# <ul class="nav-item-dropdown">
+                    <li class="nav-dropdown-item {% if craft.request.lastSegment == 'example' %}active{% endif %}">
+                        <a href="/" class="nav-link" aria-label="navigate to another page" title="Example dropdown page link">
+                            Example page
+                        </a>
+                    </li>
+                </ul> #}
+            </li>
+            <li class="nav-items-item {% if craft.request.firstSegment == 'locations' %}active{% endif %}">
+                <a href="/" class="nav-link" aria-label="navigate to another page" title="Patch locations page">
+                    Patch locations
+                </a>
+            </li>
+            <li class="nav-items-item {% if craft.request.firstSegment == 'rules' %}active{% endif %}">
+                <a href="/" class="nav-link" aria-label="navigate to another page" title="Rules page">
+                    Rules
+                </a>
+            </li>
+            <li class="nav-items-item {% if craft.request.firstSegment == 'contact' %}active{% endif %}">
+                <a href="/" class="nav-link" aria-label="navigate to another page" title="Contact page">
+                    Contact
+                </a>
+            </li>
+
+            <div class="nav-items-mobile-ctas">
+                {{ _self.navCtas() }}
+            </div>
+        </ul>
+        <div class="nav-ctas">
+            {{ _self.navCtas() }}
+        </div>
+        <div class="nav-burger">
+            <button class="btn-icon nav-control">
+                <img src="{{ alias('@web') }}/assets/svg/menu.svg" title="Mobile navigation menu icon" aria-label="Show mobile navigation" alt="Mobile navigation icon" />
+            </button>
+        </div>
+    </div>
+    {# Stylised bottom border effect #}
+    <div class="nav-after"></div>
 </nav>

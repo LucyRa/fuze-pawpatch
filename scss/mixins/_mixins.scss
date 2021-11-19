@@ -1,0 +1,68 @@
+@use '../_colours' as *;
+
+/*
+** Mixins to define styling for paper-edge effect element styling
+*/
+// Default rules for both after & before
+@mixin element-defaults ($url) {
+    content: url($url);
+    position: relative;
+}
+
+// Apply effect to bottom of element
+@mixin element-after ($url, $topPosition, $shaddow:false) {
+    &::after {
+        @include element-defaults($url);
+        @if $shaddow {
+            filter: drop-shadow(-2px 5px 24px $dropShaddow);
+        }
+        top: $topPosition;
+    }
+}
+
+// Apply effect to top of element
+@mixin element-before ($url, $position, $top:false, $shaddow:false) {
+    &::before {
+        @include element-defaults($url);
+        @if $shaddow {
+            filter: drop-shadow(-2px 5px 24px $dropShaddow);
+        }
+
+        @if $top {
+            top: $position;
+        } @else {
+            bottom: $position;
+        }
+    }
+}
+
+/*
+** Mixins to define rules for buttons
+*/
+%button-default {
+    width: fit-content;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.5s ease-in-out;
+    outline: 0;
+    border: 2px solid transparent;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@mixin btn ($bg, $bgHover, $txt, $txtHover, $border, $borderHover) {
+    @extend %button-default;
+    background-color: $bg;
+    color: $txt;
+    border: 2px solid $border;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $bgHover;
+        color: $txtHover;
+        border: 2px solid $borderHover;
+    }
+}

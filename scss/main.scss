@@ -1,4 +1,40 @@
-@use './colours' as *;
-@use './typography';
-@use './mixins/buttons';
+@use './mixins/_mixins' as *;
+@use './_colours' as *;
+@use './_typography';
+@use './_navigation';
+@use './_video-header';
+@use './_content.scss';
+@use './_cookies-bar';
+@use './_footer';
+@use './_media-queries';
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* General structural styling */
+body, nav, header, main, section, footer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
+
+body, header, main {
+    background-color: $white;
+}
+
+button.btn {
+  @include btn ($navy, $darkOrg, $white, $white, $navy, $darkOrg);
+
+  &--outline {
+    @include btn (transparent, $white, $navy, $navy, $navy, $white);
+  }
+}
+
+button.btn-icon {
+  @include btn (transparent, transparent, $white, $white, transparent, transparent);
+}

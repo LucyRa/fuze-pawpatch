@@ -21,13 +21,18 @@
 }
 
 // Apply effect to top of element
-@mixin element-before ($url, $bottomPosition, $shaddow:false) {
-    &::after {
+@mixin element-before ($url, $position, $top:false, $shaddow:false) {
+    &::before {
         @include element-defaults($url);
         @if $shaddow {
             filter: drop-shadow(-2px 5px 24px $dropShaddow);
         }
-        bottom: $bottomPosition;
+
+        @if $top {
+            top: $position;
+        } @else {
+            bottom: $position;
+        }
     }
 }
 

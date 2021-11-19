@@ -106,17 +106,33 @@
         }
     }
 
-    /* Video header (home page) */
-    header.home-welcome {
-        .scroll-to-content {
-            
+    /* Content sections */
+    section.simple-content {
+        .element-before {
+            &::before {
+                top: -2rem;
+            }
+        }
+
+        .content-wrapper {
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .content-text,
+            .content-image {
+                width: 100%;
+            }
+
+            .content-text {
+                max-width: unset;
+            }
         }
     }
 
     /* Cookies preferences, positioned bar */
     .cookies-bar-before {
-        &::after {
-            bottom: 10px;
+        &::before {
+            bottom: 1rem;
         }
     }
 
@@ -137,6 +153,22 @@
         .content-ctas {
             flex-wrap: wrap;
             min-width: unset;
+        }
+    }
+}
+
+@media only screen and (max-width: 592px) {
+    section.simple-content {
+        .element-before {
+            &::before {
+                top: -1rem;
+            }
+        }
+    }
+
+    .cookies-bar-before {
+        &::before {
+            bottom: 0.5rem;
         }
     }
 }

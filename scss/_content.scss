@@ -1,0 +1,86 @@
+@use './_colours' as *;
+@use './_typography';
+@use './mixins/_mixins' as *;
+
+.content-wrapper {
+    width: 90%;
+    max-width: 1151px;
+    margin: 0 auto;
+
+}
+
+section.simple-content {
+    padding: 0%% 0% 7.6% 0%;
+
+    .element-before {
+        height: 1px;
+        padding-top: 64px;
+        
+        @include element-before('/assets/svg/simple-before.svg', calc(-12%), $top:true);
+    
+        &::before {
+            position: absolute;
+            z-index: 1;
+            width: calc(100%);
+        }
+    }
+
+    .content-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+        max-height: 420px;
+    }
+
+    .content-text {
+        width: 48.2%;
+        max-width: 555px;
+
+        h2.headline,
+        p {
+            width: 100%;
+            color: $darkGrey;
+        }
+    }
+
+    .content-image {
+        width: 43.8%;
+        max-width: 504px;
+        max-height: 504px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .image-container {
+            display: inline-table;
+
+            img {
+                display: block;
+                width: 100%;
+                max-width: 414px;
+                position: relative;
+            }
+    
+            &::after {
+                content: url('/assets/svg/paw-prints-org.svg');
+                position: relative;
+                width: calc(19.28%);
+                display: block;
+                transform: rotate(-180deg) translateX(-1.1rem) translateY(8rem);
+            }
+    
+            &::before {
+                content: url('/assets/svg/paw-prints-org.svg');
+                position: relative;
+                width: calc(22.25%);
+                // bottom: -8.2rem;
+                // right: -18.5rem;
+                display: block;
+                transform: translateX(18.4rem) translateY(8rem);
+                z-index: 1;
+            }
+        }
+
+    }
+}

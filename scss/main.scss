@@ -3,6 +3,7 @@
 @use './_typography';
 @use './_navigation';
 @use './_video-header';
+@use './_content.scss';
 @use './_cookies-bar';
 @use './_footer';
 @use './_media-queries';
@@ -14,7 +15,7 @@
 }
 
 /* General structural styling */
-body, nav, header, main, footer {
+body, nav, header, main, section, footer {
     margin: 0;
     padding: 0;
     width: 100%;

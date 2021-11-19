@@ -13,4 +13,11 @@ $(function () {
     $('.coming-soon').on('click', () => {
         alert('Coming soon!');
     });
+
+    // Event handler for scroll to content
+    $('.scroll-to-content').on('click', () => {
+        $('html, body').animate({
+            scrollTop: $("#homeContent").offset().top
+        }, 2000);
+    });
 });
